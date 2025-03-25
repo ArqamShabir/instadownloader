@@ -1,4 +1,4 @@
-// File: /var/www/instadownloader/src/app/api/video/route.ts
+// File: D:\Earning Tools\instadownloader\src\app\api\video\route.ts
 import * as entry from '../../../../../src/app/api/video/route.js'
 import type { NextRequest } from 'next/server.js'
 
