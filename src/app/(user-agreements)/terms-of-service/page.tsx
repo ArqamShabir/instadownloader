@@ -1,3 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Terms of Service - InstaDownloader",
+  description: "Review the terms of service for InstaDownloader before using our website.",
+  alternates: {
+    canonical: "https://instadownloader.cloud/terms",
+  },
+};
+
 const TermsOfServicePage = () => {
   return (
     <div className="my-4 flex flex-col rounded-lg border p-8">

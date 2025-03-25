@@ -1,29 +1,36 @@
 import { InstagramVideoForm } from "@/features/instagram/components/form";
 import Faq from "@/features/instagram/components/Faq.jsx";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Instagram Video Downloader - Download HD Videos & Reels",
+  description:
+    "Download Instagram videos, reels, and stories in HD quality. Our Instagram Video Downloader is fast, free, and easy to use. Try it now!",
+  keywords: [
+    "Instagram Video Downloader",
+    "Download Instagram Reels",
+    "Save Instagram Videos",
+    "Instagram Story Downloader",
+    "HD Instagram Videos",
+  ],
+  authors: [{ name: "InstagramDownloader.cloud" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Instagram Video Downloader - Download HD Videos & Reels",
+    description:
+      "Easily download Instagram videos, reels, and stories in HD quality. Fast, secure, and free!",
+    url: "https://instadownloader.cloud",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://instadownloader.cloud",
+  },
+};
+
 
 export default function HomePage() {
   return (
     <div className="flex flex-col py-8">
-            <Head>
-
-<title>Instagram Video Downloader - Download HD Videos & Reels</title>
-<meta name="description" content="Download Instagram videos, reels, and stories in HD quality. Our Instagram Video Downloader is fast, free, and easy to use. Try it now!" />
-<meta name="keywords" content="Instagram Video Downloader, Download Instagram Reels, Save Instagram Videos, Instagram Story Downloader, HD Instagram Videos" />
-<meta name="author" content="InstagramDownloader.cloud" />
-<meta name="robots" content="index, follow" />
-
-<meta property="og:title" content="Instagram Video Downloader - Download HD Videos & Reels" />
-<meta property="og:description" content="Easily download Instagram videos, reels, and stories in HD quality. Fast, secure, and free!" />
-<meta property="og:url" content="https://instadownloader.cloud" />
-<meta property="og:type" content="website" />
-
-
-<link rel="canonical" href="https://instadownloader.cloud" />
-
-<link rel="icon" href="/favicon.ico" />
-<meta name="theme-color" content="#ffffff" />
-</Head>
       <h1 className="text-balance mb-8 text-center text-4xl font-extrabold">
         Instagram Video Downloader
       </h1>

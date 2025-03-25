@@ -1,3 +1,27 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - InstaDownloader",
+  description: "Read our privacy policy regarding data collection and third-party services.",
+  keywords: [
+    "Privacy Policy",
+    "InstaDownloader Privacy",
+    "Data Collection Policy",
+    "AdSense Policy",
+  ],
+  authors: [{ name: "InstagramDownloader.cloud" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Privacy Policy - InstaDownloader",
+    description: "Read our privacy policy regarding data collection and third-party services.",
+    url: "https://instadownloader.cloud/privacy-policy",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://instadownloader.cloud/privacy-policy",
+  },
+};
+
 const PrivacyPolicyPage = () => {
   return (
     <div className="my-4 flex flex-col rounded-lg border p-8">
