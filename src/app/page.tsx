@@ -15,7 +15,7 @@ export default function HomePage() {
 
 <meta property="og:title" content="Instagram Video Downloader - Download HD Videos & Reels" />
 <meta property="og:description" content="Easily download Instagram videos, reels, and stories in HD quality. Fast, secure, and free!" />
-<meta property="og:url" content="https://instaownloader.cloud" />
+<meta property="og:url" content="https://instadownloader.cloud" />
 <meta property="og:type" content="website" />
 
 
