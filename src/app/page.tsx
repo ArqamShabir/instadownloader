@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Instagram Story Downloader",
     "HD Instagram Videos",
   ],
-  authors: [{ name: "InstagramDownloader.cloud" }],
+  authors: [{ name: "InstaDownloader.cloud" }],
   robots: "index, follow",
   openGraph: {
     title: "Instagram Video Downloader - Download HD Videos & Reels",

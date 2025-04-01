@@ -45,15 +45,22 @@ export function InstagramVideoForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const { postUrl } = values;
     try {
-      console.log("getting video info", postUrl);
+      console.log("Getting video info", postUrl);
       const videoInfo = await getVideoInfo({ postUrl });
-
+  
       const { filename, videoUrl } = videoInfo;
-      downloadFile(videoUrl, { filename });
+  
+      const link = document.createElement("a");
+      link.href = videoUrl;
+      link.setAttribute("download", filename || "video.mp4");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error: any) {
       console.log(error);
     }
   }
+  
 
   return (
     <Form {...form}>

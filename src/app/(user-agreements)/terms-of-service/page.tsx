@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "Terms of Service - InstaDownloader",
   description: "Review the terms of service for InstaDownloader before using our website.",
   alternates: {
-    canonical: "https://instadownloader.cloud/terms",
+    canonical: "https://instadownloader.cloud/terms-of-service",
   },
 };
 
