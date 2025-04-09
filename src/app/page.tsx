@@ -3,9 +3,9 @@ import Faq from "@/features/instagram/components/Faq.jsx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Instagram Video Downloader - Download HD Videos & Reels",
+  title: "Instagram Video Downloader - Fast & Private",
   description:
-    "Download Instagram videos, reels, and stories in HD quality. Our Instagram Video Downloader is fast, free, and easy to use. Try it now!",
+    "Download Instagram videos, reels, and stories in HD quality. Our Instagram Video Downloader is fast, free, and easy to use. You can securly download and use the reels. Try it now!",
   keywords: [
     "Instagram Video Downloader",
     "Download Instagram Reels",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   authors: [{ name: "InstaDownloader.cloud" }],
   robots: "index, follow",
   openGraph: {
-    title: "Instagram Video Downloader - Download HD Videos & Reels",
+    title: "Instagram Video Downloader - Fast & Private",
     description:
       "Easily download Instagram videos, reels, and stories in HD quality. Fast, secure, and free!",
     url: "https://instadownloader.cloud",
