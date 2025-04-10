@@ -1,3 +1,5 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/instagram-downloader/page": "app/instagram-downloader/page.js",
+  "/insta-downloader/page": "app/insta-downloader/page.js"
 }

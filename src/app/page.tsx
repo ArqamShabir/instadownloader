@@ -3,29 +3,48 @@ import Faq from "@/features/instagram/components/Faq.jsx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Instagram Video Downloader - Fast & Private",
+  title: "Instagram Downloader - Download Reels, Videos, Stories & IGTV",
   description:
-    "Download Instagram videos, reels, and stories in HD quality. Our Instagram Video Downloader is fast, free, and easy to use. You can securly download and use the reels. Try it now!",
+    "Download Instagram videos, reels, stories, IGTV, and photos for free in HD quality. Fast, secure, and easy to use Instagram downloader. Try it now!",
   keywords: [
     "Instagram Video Downloader",
     "Download Instagram Reels",
     "Save Instagram Videos",
     "Instagram Story Downloader",
-    "HD Instagram Videos",
+    "Instagram IGTV Downloader",
+    "Instagram Photo Downloader",
+    "Download Instagram Album",
+    "Fast Instagram Downloader"
   ],
   authors: [{ name: "InstaDownloader.cloud" }],
-  robots: "index, follow",
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   openGraph: {
-    title: "Instagram Video Downloader - Fast & Private",
+    title: "Instagram Downloader - Download Reels, Videos, Stories & IGTV",
     description:
-      "Easily download Instagram videos, reels, and stories in HD quality. Fast, secure, and free!",
+      "Easily download Instagram videos, reels, IGTV, and photos in HD. 100% free and private Instagram downloader!",
     url: "https://instadownloader.cloud",
     type: "website",
+    images: [
+      {
+        url: "https://instadownloader.cloud/images/Snapshot.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Instagram Downloader Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instagram Downloader - Download Videos, Reels & IGTV",
+    description:
+      "Fast & free Instagram video downloader. Save IG videos, reels, stories, IGTV, and albums in HD.",
+    images: ["https://instadownloader.cloud/images/Snapshot.jpg"],
   },
   alternates: {
     canonical: "https://instadownloader.cloud",
   },
 };
+
 
 
 export default function HomePage() {
@@ -38,36 +57,60 @@ export default function HomePage() {
         <InstagramVideoForm />
       </section>
       <section className="flex flex-col items-center justify-center gap-4">
-      <div className="my-6 p-6" style={{maxWidth:'1200px'}}>
-      <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-        Overview
-      </h2>
-      <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-      Our tool is specifically designed to assist you in downloading videos and images that you have uploaded to your own account. However, we reserve the right to deny service if our tools are used to violate others privacy or intellectual property.      </p>
-      <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-      Please carefully review these Terms of Service (ToS) before using our website and application. For the complete details, refer to our full Terms of Service. Below are the key highlights for your convenience:
-      </p>
+  <div className="my-6 p-6" style={{ maxWidth: '1200px' }}>
+    <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+      Welcome to the Best Insta Reels Downloader!
+    </h2>
+    <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
+      <strong>Insta Reels Downloader</strong> allows you to download Instagram reels in high quality without installing any software or application. With just a few clicks, you can save your favorite reels directly to your device in MP4 format. 
+    </p>
+    
+    <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
+      Did you know? More than 100 million videos and reels are uploaded to Instagram daily. But Instagram does not provide an official option to download them. That’s where our <strong>Insta Reels Downloader</strong> comes in handy! Now you can save Instagram reels easily and watch them offline anytime.
+    </p>
 
-      <ul className="list-disc pl-6 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-        <li>
-          <span className="font-semibold">InstagramDownloader.cloud</span> is a self-developed and independent application/website. <span className="font-semibold">WE ARE NOT AFFILIATED WITH INSTAGRAM OR META.</span>
-        </li>
-        <li>
-          We respect trademark rights and comply with trademark laws and regulations. Our trademark, <span className="font-semibold">InstagramDownloader.cloud™</span>, is created by our team and should be used only for and in relation to our Services, App, and Web.
-        </li>
-        <li>
-          We accept advertisements (Ads) on our website and application to maintain and support our own research and development for non-commercial purposes. Ads appearing on our website and application may be delivered to Users by advertising partners who may set cookies.
-        </li>
-        <li>
-          You may dismiss the use of cookies or cease access to our application and website at any time as you are not required to accept the Ads.
-        </li>
-      </ul>
+    <img 
+      src="/images/insta-reels-downloader.png" 
+      alt="Instagram Reels Downloader" 
+      className="w-full mx-auto my-8 rounded-lg shadow-md"
+      style={{maxWidth:'800px'}}
+    />
 
-      <p className="text-sm text-gray-700 dark:text-gray-300 mt-4">
-        By accessing and using our application and website, you signify your acceptance of our policy and ToS, including any updates. If you do not agree with any content, please do not use our application and website.
-      </p>
-    </div>  
-    </section>
+    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Why Use Our Instagram Reels Downloader?</h3>
+    <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
+      There are many reasons why users prefer downloading Instagram reels instead of taking screenshots or screen recordings:
+    </p>
+    <ul className="list-disc pl-6 text-md text-gray-700 dark:text-gray-300 space-y-2">
+      <li><strong>No Watermarks:</strong> Save high-quality reels without any watermarks.</li>
+      <li><strong>100% Free:</strong> Use our tool for unlimited downloads without any cost.</li>
+      <li><strong>Fast & Easy:</strong> Download reels instantly with a simple copy-paste method.</li>
+      <li><strong>High-Quality MP4:</strong> Get videos in original resolution without losing quality.</li>
+      <li><strong>No Sign-In Required:</strong> Unlike other services, you don’t need to log in or provide personal data.</li>
+      <li><strong>Works on All Devices:</strong> Download Instagram reels on Android, iPhone, Windows, and Mac.</li>
+    </ul>
+
+    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white mt-6">How to Download Instagram Reels?</h3>
+    <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
+      Follow these simple steps to save Instagram reels to your device:
+    </p>
+    <ul className="list-decimal pl-6 text-md text-gray-700 dark:text-gray-300 space-y-2">
+      <li><strong>Step 1:</strong> Open Instagram on your browser or mobile app.</li>
+      <li><strong>Step 2:</strong> Find the reel you want to download.</li>
+      <li><strong>Step 3:</strong> Tap the <strong>three-dot menu</strong> and select <strong>"Copy Link"</strong>.</li>
+      <li><strong>Step 4:</strong> Paste the copied link into our Reels Downloader input box.</li>
+      <li><strong>Step 5:</strong> Click the <strong>"Download"</strong> button and wait a few seconds.</li>
+      <li><strong>Step 6:</strong> Your Instagram reel will be saved in high quality on your device.</li>
+    </ul>
+
+    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white mt-6">Important Notice</h3>
+    <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
+      Our tool is designed for **personal use only**. Please respect Instagram's copyright policies and do not download content without the creator’s permission.
+    </p>
+    <p className="text-md text-gray-700 dark:text-gray-300">
+      We update our downloader regularly to ensure it works with Instagram’s latest updates. If you like our service, please share it with friends and support us!
+    </p>
+  </div>  
+</section>
     <section className="flex flex-col items-center justify-center gap-4">
     <Faq/>    
     </section>
