@@ -60,7 +60,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="my-8 mx-auto p-6 border rounded-lg shadow-lg" style={{width:'100%',maxWidth:'1200px'}}>
+    <div className="my-8 mx-auto p-6 border rounded-lg shadow-lg w-full max-w-[1200px]">
       <h2 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (

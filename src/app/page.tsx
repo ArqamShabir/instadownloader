@@ -57,7 +57,7 @@ export default function HomePage() {
         <InstagramVideoForm />
       </section>
       <section className="flex flex-col items-center justify-center gap-4">
-  <div className="my-6 p-6" style={{ maxWidth: '1200px' }}>
+  <div className="my-6 p-6 max-w-[1200px]">
     <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">
       Welcome to the Best Insta Reels Downloader!
     </h2>
@@ -72,8 +72,8 @@ export default function HomePage() {
     <img 
       src="/images/insta-reels-downloader.png" 
       alt="Instagram Reels Downloader" 
-      className="w-full mx-auto my-8 rounded-lg shadow-md"
-      style={{maxWidth:'800px'}}
+      className="w-full mx-auto my-8 rounded-lg shadow-md max-w-[800px]"
+      
     />
 
     <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Why Use Our Instagram Reels Downloader?</h3>
