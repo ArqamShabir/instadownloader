@@ -1,5 +1,5 @@
 import { DM_Sans as FontSans } from "next/font/google";
-
+import Script from "next/script";
 import "@/styles/globals.css";
 
 import { Footer } from "@/components/Footer";
@@ -22,6 +22,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XCVGZ9EHTJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XCVGZ9EHTJ');
+          `}
+        </Script>
+      </head>
       <body
         className={cn(
           fontSans.variable,
