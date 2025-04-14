@@ -18,6 +18,18 @@ export function Footer() {
           <Link href="/privacy-policy" className="hover:underline">
             Privacy Policy
           </Link>
+          <span aria-hidden="true" className="mx-2 select-none">
+            |
+          </span>
+          <Link href="/discalaimer" className="hover:underline">
+            Disclaimer
+          </Link>
+          <span aria-hidden="true" className="mx-2 select-none">
+            |
+          </span>
+          <Link href="/contact" className="hover:underline">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>

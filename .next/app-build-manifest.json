@@ -1,15 +1,30 @@
 {
   "pages": {
-    "/insta-downloader/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/insta-downloader/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/(user-agreements)/discalaimer/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(user-agreements)/discalaimer/page.js"
+    ],
+    "/(user-agreements)/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(user-agreements)/contact/page.js"
+    ],
+    "/(user-agreements)/terms-of-service/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(user-agreements)/terms-of-service/page.js"
     ]
   }
 }
