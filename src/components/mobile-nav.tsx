@@ -31,7 +31,6 @@ export function MobileNav({ className }: { className?: string }) {
           <Menu className="h-4 w-4" />
         </Button>
       </SheetTrigger>
-      <Image src="/images/logo2.png" className="md:hidden" width={220} height={100} alt="Instagram Video Downloader"/>
 
       <SheetContent side="left">
         <h2 className="mb-4 text-center text-lg font-semibold">

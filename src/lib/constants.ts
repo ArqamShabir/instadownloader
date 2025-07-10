@@ -16,4 +16,12 @@ export const siteLinks: NavLink[] = [
     name: "Privacy Policy",
     href: "/privacy-policy",
   },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
 ];
