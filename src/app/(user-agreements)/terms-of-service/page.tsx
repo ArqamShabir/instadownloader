@@ -1,143 +1,71 @@
+// pages/terms-of-service.tsx
 import { Metadata } from "next";
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
   title: "Terms of Service - InstaDownloader",
-  description: "Review the terms of service for InstaDownloader before using our website.",
-  alternates: {
-    canonical: "https://instadownloader.cloud/terms-of-service",
-  },
+  description: "Read the terms and conditions for using InstaDownloader.cloud. Know your rights and responsibilities.",
+  keywords: ["Terms of Service", "Terms and Conditions", "InstaDownloader", "Legal Agreement"],
 };
 
 const TermsOfServicePage = () => {
   return (
-    <div className="my-4 flex flex-col rounded-lg border p-8">
-      <h1 className="mb-4 text-2xl font-bold">Terms of Service</h1>
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">1. Introduction</h2>
-        <p className="mb-2">
-          <span className="font-semibold">1.1.</span> This Terms of Service
-          (ToS) governs your use of the website
-          <span className="text-gray-900 dark:text-gray-500">
-            {" "}
-            (instadownloader.cloud).
-          </span>{" "}
-          By using the Website or Service, you agree to be bound by the terms
-          and conditions set forth in this ToS.
-        </p>
-        <p className="mb-2">
-          <span className="font-semibold">1.2.</span> Please read this ToS
-          carefully before using the Website or Service. If you do not agree to
-          the terms of this ToS, you must not access or use the Website or
-          Service.
-        </p>
-      </section>
+    <div className="min-h-[80vh] bg-gray-50 dark:bg-gray-900 py-12 px-4 flex justify-center">
+      <div className="max-w-4xl w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 md:p-12">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+          Terms of Service
+        </h1>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">2. Changes to the ToS</h2>
-        <p className="mb-2">
-          <span className="font-semibold">2.1.</span> We reserve the right to
-          update, modify, or replace any part of the ToS at any time by posting
-          the updated ToS on the Website. Your continued use of the Website or
-          Service after the effective date of the updated ToS constitutes your
-          acceptance of the new terms.
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          These Terms of Service ("Terms") govern your use of the website https://instadownloader.cloud ("Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use our Site.
         </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">3. Prohibited Uses</h2>
-        <p className="mb-2">
-          <span className="font-semibold">3.1.</span> You may not use the
-          Website or Service for any illegal activities, including but not
-          limited to:
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">1. Use of the Site</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          InstaDownloader.cloud provides a tool to download public content from supported social platforms. You agree to use the Site only for lawful purposes and in compliance with all applicable laws.
         </p>
-        <ul className="mb-2 list-disc pl-6">
-          <li>
-            Distributing or accessing content that infringes on other&apos;s
-            intellectual property rights;
-          </li>
-          <li>
-            Transmitting or distributing material that promotes violence,
-            discrimination, or illegal activities;
-          </li>
-          <li>
-            Harassing, stalking, or intimidating other users of the Website or
-            Service.
-          </li>
-        </ul>
-        <p className="mb-2">
-          <span className="font-semibold">3.2.</span> You agree not to engage in
-          any activities that could harm or disable the Website or Service or
-          interfere with other user&apos;s use and enjoyment of the Website or
-          Service.
-        </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">
-          4. Intellectual Property Rights
-        </h2>
-        <p className="mb-2">
-          <span className="font-semibold">4.1.</span> All content, including but
-          not limited to text, images, videos, and software, on the Website is
-          the property of the Website owner or its licensors. You are granted a
-          limited license to access and view the content for your personal,
-          non-commercial use only.
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">2. Intellectual Property</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          All content on this Site, including but not limited to text, graphics, logos, and software, is the property of InstaDownloader.cloud or its content suppliers and is protected by copyright and other intellectual property laws.
         </p>
-        <p className="mb-2">
-          <span className="font-semibold">4.2.</span> You may not modify, copy,
-          distribute, transmit, display, perform, reproduce, publish, license,
-          create derivative works from, transfer, or sell any content from the
-          Website without the express prior written permission of the Website
-          owner.
-        </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">
-          5. Disclaimers and Limitations of Liability
-        </h2>
-        <p className="mb-2">
-          <span className="font-semibold">5.1.</span> The Website and Service
-          are provided on an &ldquo;as is&ldquo; and &ldquo;as available&ldquo;
-          basis without any warranties, express or implied, including but not
-          limited to warranties of merchantability, fitness for a particular
-          purpose, and non-infringement.
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">3. User Responsibilities</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          You are responsible for ensuring that your use of the Site does not violate any laws or regulations, including copyright laws. You agree not to download or distribute copyrighted content without proper authorization.
         </p>
-        <p className="mb-2">
-          <span className="font-semibold">5.2.</span> We shall not be liable for
-          any direct, indirect, incidental, special, consequential, or punitive
-          damages arising out of or in connection with your use of the Website
-          or Service.
-        </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">6. Governing Law</h2>
-        <p className="mb-2">
-          <span className="font-semibold">6.1.</span> These ToS shall be
-          governed by and construed in accordance with the laws of {" "}
-          <span className="italic">Algeria</span>, without regard to its
-          conflict of law provisions.
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">4. Third-Party Content</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          The Site may contain links to third-party websites. We are not responsible for the content, accuracy, or opinions expressed on such websites, and such websites are not investigated, monitored, or checked for accuracy or completeness.
         </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">7. Contact Information</h2>
-        <p className="mb-2">
-          <span className="font-semibold">7.1.</span> If you have any questions
-          or concerns about this ToS, please contact the Website owner at {" "}
-          <span className="italic">support@multishells.com</span>.
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">5. Limitation of Liability</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          InstaDownloader.cloud shall not be liable for any damages resulting from the use or inability to use the Site, including but not limited to indirect, incidental, or consequential damages.
         </p>
-      </section>
 
-      <section className="mb-2 text-sm">
-        <h2 className="mb-2 text-xl font-semibold">8. Acceptance of ToS</h2>
-        <p>
-          By accessing or using the Website or Service, you acknowledge that you
-          have read, understood, and agree to be bound by the terms and
-          conditions of this ToS.
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">6. Termination</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          We reserve the right to suspend or terminate your access to the Site at any time without prior notice if we suspect any violation of these Terms.
         </p>
-      </section>
+
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">7. Changes to Terms</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          We may update or change these Terms at any time. Any changes will be posted on this page. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms.
+        </p>
+
+        <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">8. Contact Us</h2>
+        <p className="text-gray-700 dark:text-gray-300">
+          If you have any questions about these Terms, you may contact us at:{" "}
+          <a href="mailto:support@multishells.com" className="text-blue-500 underline">
+            support@multishells.com
+          </a>
+        </p>
+
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+          These Terms of Service were last updated on <strong>July 10, 2025</strong>.
+        </p>
+      </div>
     </div>
   );
 };
