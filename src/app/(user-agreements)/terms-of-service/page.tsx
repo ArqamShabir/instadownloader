@@ -57,8 +57,8 @@ const TermsOfServicePage = () => {
         <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">8. Contact Us</h2>
         <p className="text-gray-700 dark:text-gray-300">
           If you have any questions about these Terms, you may contact us at:{" "}
-          <a href="mailto:support@multishells.com" className="text-blue-500 underline">
-            support@multishells.com
+          <a href="mailto:quote.fiction1@gmail.com" className="text-blue-500 underline">
+            quote.fiction1@gmail.com
           </a>
         </p>
 
@@ -71,3 +71,4 @@ const TermsOfServicePage = () => {
 };
 
 export default TermsOfServicePage;
+

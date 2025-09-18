@@ -74,6 +74,15 @@ export const formatGraphqlJson = (data: MediaData) => {
     width,
     height,
     videoUrl,
+    thumbnailUrl: data.display_url || data.thumbnail_src,
+    title: data.title || data.owner?.username || undefined,
+    caption: data.edge_media_to_caption?.edges?.[0]?.node?.text,
+    authorName: data.owner?.full_name,
+    authorUsername: data.owner?.username,
+    authorProfilePicture: data.owner?.profile_pic_url,
+    durationSeconds: Number.isFinite(data.video_duration) ? Math.round(data.video_duration) : undefined,
+    viewCount: data.video_view_count,
+    source: 'graphql',
   };
 
   return videoJson;
@@ -95,12 +104,24 @@ export const formatPageJson = (postHtml: CheerioAPI) => {
     postHtml("meta[property='og:video:height']").attr("content") ?? "";
 
   const filename = getIGVideoFileName();
+  const thumbnailUrl =
+    postHtml("meta[property='og:image']").attr("content") ?? undefined;
+  const title =
+    postHtml("meta[property='og:title']").attr("content") ?? undefined;
+  const caption =
+    postHtml("meta[property='og:description']").attr("content") ??
+    postHtml("meta[name='description']").attr("content") ??
+    undefined;
 
   const videoJson: VideoInfo = {
     filename,
     width,
     height,
     videoUrl,
+    thumbnailUrl,
+    title,
+    caption,
+    source: 'webpage',
   };
 
   return videoJson;

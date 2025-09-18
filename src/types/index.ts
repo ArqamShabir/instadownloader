@@ -17,6 +17,15 @@ export type VideoInfo = {
   width: string;
   height: string;
   videoUrl: string;
+  thumbnailUrl?: string;
+  title?: string;
+  caption?: string;
+  authorName?: string;
+  authorUsername?: string;
+  authorProfilePicture?: string;
+  durationSeconds?: number;
+  viewCount?: number;
+  source?: "graphql" | "webpage";
 };
 
 export type SuccessResponse<T> = {

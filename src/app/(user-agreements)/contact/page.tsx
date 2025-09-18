@@ -1,51 +1,37 @@
-// pages/contact.tsx
 import { Metadata } from "next";
-import { Mail } from "lucide-react"; // Optional: icon library (Lucide)
+import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us - InstaDownloader",
-  description: "Contact the InstaDownloader.cloud team with your questions or concerns.",
+  description: "Contact the InstaDownloader.cloud team with your questions or partnership ideas.",
   keywords: ["Contact", "Support", "InstaDownloader"],
 };
 
 const ContactPage = () => {
   return (
-    <div className="min-h-[80vh] bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4 text-center">
-          Get in Touch
+    <div className="flex min-h-[80vh] items-center justify-center bg-slate-50 px-4 dark:bg-slate-950">
+      <div className="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-8 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:p-12">
+        <h1 className="text-center text-3xl font-extrabold text-slate-900 dark:text-white md:text-4xl">
+          Get in touch
         </h1>
-        <p className="text-gray-600 dark:text-gray-300 text-center mb-8">
-          We'd love to hear from you. Whether you have a question, feedback, or need help — reach out!
+        <p className="mt-3 text-center text-sm text-slate-600 dark:text-slate-300">
+          We would love to hear from you. Whether you have a question, feedback, or media request, reach out any time.
         </p>
 
-        <div className="flex items-center space-x-4 justify-center mb-6">
-          <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <div className="rounded-full bg-blue-100 p-3 dark:bg-blue-900/50">
             <Mail className="h-6 w-6 text-blue-600 dark:text-blue-300" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Email Support</h2>
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Email support</h2>
             <a
-              href="mailto:support@multishells.com"
-              className="text-blue-600 dark:text-blue-400 hover:underline"
+              href="mailto:quote.fiction1@gmail.com"
+              className="text-blue-600 transition hover:underline dark:text-blue-400"
             >
-              support@multishells.com
+              quote.fiction1@gmail.com
             </a>
           </div>
         </div>
-
-        {/* Optional: Contact form section (currently hidden) */}
-        {/* <form className="mt-8 space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
-          <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
-          <textarea placeholder="Your Message" rows={4} className="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition"
-          >
-            Send Message
-          </button>
-        </form> */}
       </div>
     </div>
   );
