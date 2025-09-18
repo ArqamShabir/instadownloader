@@ -49,6 +49,7 @@ export function InstagramVideoForm() {
   const [snapshotUrl, setSnapshotUrl] = useState<string | null>(null);
   const [isGeneratingSnapshot, setIsGeneratingSnapshot] = useState(false);
   const [snapshotError, setSnapshotError] = useState<string | null>(null);
+  const [thumbnailError, setThumbnailError] = useState(false);
   const previewRef = useRef<HTMLDivElement | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -79,12 +80,29 @@ export function InstagramVideoForm() {
     return `/api/video/stream?${params.toString()}`;
   }, [videoInfo]);
 
+  const proxiedThumbnail = useMemo(() => {
+    if (!videoInfo?.thumbnailUrl) return "";
+    const params = new URLSearchParams({
+      imageUrl: videoInfo.thumbnailUrl,
+    });
+    return `/api/image/proxy?${params.toString()}`;
+  }, [videoInfo?.thumbnailUrl]);
+
+  useEffect(() => {
+    setThumbnailError(false);
+  }, [proxiedThumbnail]);
+
   useEffect(() => {
     setSnapshotUrl(null);
     setSnapshotError(null);
     setIsGeneratingSnapshot(false);
 
-    if (!videoInfo || videoInfo.thumbnailUrl) {
+    if (!videoInfo) {
+      return;
+    }
+
+    const shouldGenerateSnapshot = !proxiedThumbnail || thumbnailError;
+    if (!shouldGenerateSnapshot || !streamSrc) {
       return;
     }
 
@@ -131,7 +149,7 @@ export function InstagramVideoForm() {
 
     const handleError = () => {
       if (!disposed) {
-        setSnapshotError("Unable to load video for preview.");
+        setSnapshotError("We couldn't capture a thumbnail preview. Use the player below.");
         setIsGeneratingSnapshot(false);
       }
       handleCleanup();
@@ -153,7 +171,7 @@ export function InstagramVideoForm() {
       video.removeEventListener("error", handleError);
       handleCleanup();
     };
-  }, [streamSrc, videoInfo]);
+  }, [proxiedThumbnail, streamSrc, thumbnailError, videoInfo]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const postUrl = values.postUrl.trim();
@@ -162,6 +180,7 @@ export function InstagramVideoForm() {
     setVideoInfo(null);
     setSnapshotUrl(null);
     setSnapshotError(null);
+    setThumbnailError(false);
 
     try {
       const info = await getVideoInfo({ postUrl });
@@ -179,7 +198,7 @@ export function InstagramVideoForm() {
     downloadFile(downloadHref, { filename: videoInfo.filename, target: "_self" });
   }
 
-  const previewThumbnail = videoInfo?.thumbnailUrl || snapshotUrl;
+  const previewThumbnail = thumbnailError ? snapshotUrl : proxiedThumbnail || snapshotUrl;
 
   return (
     <div className="flex w-full flex-col items-center gap-8">
@@ -282,13 +301,19 @@ export function InstagramVideoForm() {
         {!isPending && videoInfo && (
           <article className="w-full rounded-3xl border border-blue-100 bg-white/95 p-6 shadow-xl shadow-blue-200/40 backdrop-blur dark:border-blue-900/40 dark:bg-slate-950/80 dark:shadow-blue-950/30 sm:p-8">
             <div className="flex flex-col gap-6 md:flex-row">
-              <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-blue-100 bg-black/80 md:w-72 dark:border-blue-900/50">
+              <div style={{ maxHeight: '300px'}} className="flex items-center justify-center overflow-hidden rounded-2xl border border-blue-100 bg-black/80 md:w-72 dark:border-blue-900/50">
                 {previewThumbnail ? (
                   <img
                     src={previewThumbnail}
                     alt={videoInfo.title || "Instagram reel thumbnail"}
                     className="h-full w-full object-cover"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={() => {
+                      if (!thumbnailError) {
+                        setThumbnailError(true);
+                      }
+                    }}
                   />
                 ) : isGeneratingSnapshot ? (
                   <div className="flex h-full min-h-[250px] w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-200 to-blue-100 text-blue-800 dark:from-blue-900/40 dark:to-blue-700/40 dark:text-blue-100">

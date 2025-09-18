@@ -42,7 +42,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body
+      <body suppressHydrationWarning
         className={cn(
           fontSans.variable,
           "bg-background overflow-x-hidden font-sans antialiased"
