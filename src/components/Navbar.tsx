@@ -16,16 +16,19 @@ export function Navbar() {
         )}
       >
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center space-x-2">
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/images/logo2.png"
-              width={160}
-              height={60}
+              src="/images/logo.png"
+              width={40}
+              height={40}
               alt="InstaDownloader Logo"
-              className="h-auto w-auto"
+              className="h-10 w-10"
               priority
             />
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
+              InstaDownloader
+            </span>
           </Link>
         </div>
 

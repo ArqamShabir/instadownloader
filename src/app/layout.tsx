@@ -23,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
-       <Script
+        {/* AdSense scripts temporarily disabled */}
+        {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2897420441745530"
           crossOrigin="anonymous"
@@ -40,7 +41,7 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-XCVGZ9EHTJ');
           `}
-        </Script>
+        </Script> */}
       </head>
       <body suppressHydrationWarning
         className={cn(
@@ -51,10 +52,10 @@ export default function RootLayout({
 
           <ReactQueryProvider>
             <Navbar />
-            <main className="relative overflow-y-auto px-2 sm:px-4">
+            <main className="relative overflow-y-auto">
               {children}
             </main>
-            <Footer />
+          
           </ReactQueryProvider>
       </body>
     </html>

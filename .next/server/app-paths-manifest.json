@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/(user-agreements)/blog/page": "app/(user-agreements)/blog/page.js",
+  "/api/video/route": "app/api/video/route.js"
 }

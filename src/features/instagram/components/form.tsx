@@ -205,7 +205,7 @@ export function InstagramVideoForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-blue-100 bg-white/90 p-6 shadow-xl shadow-blue-200/40 backdrop-blur dark:border-blue-900/40 dark:bg-slate-950/80 dark:shadow-blue-900/30 sm:p-8"
+          className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-blue-100 bg-transparent p-6 shadow-xl shadow-blue-200/40 backdrop-blur dark:border-blue-900/40 dark:shadow-blue-900/30 sm:bg-white/90 sm:p-8 dark:sm:bg-slate-950/80"
         >
           <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
@@ -223,7 +223,7 @@ export function InstagramVideoForm() {
                           autoComplete="off"
                           spellCheck={false}
                           placeholder="https://www.instagram.com/reel/..."
-                          className="h-14 rounded-2xl border-blue-200 bg-white px-4 text-base shadow-inner focus-visible:border-blue-500 focus-visible:ring-blue-400 disabled:opacity-70 dark:border-blue-900/60 dark:bg-slate-900/70 dark:text-white"
+                          className="h-14 rounded-2xl border-blue-200 bg-transparent px-4 text-base shadow-inner focus-visible:border-blue-500 focus-visible:ring-blue-400 disabled:opacity-70 dark:border-blue-900/60 dark:text-white sm:bg-white dark:sm:bg-slate-900/70"
                           {...field}
                         />
                       </FormControl>
@@ -247,15 +247,6 @@ export function InstagramVideoForm() {
               </Button>
             </div>
 
-            <div className="flex flex-col gap-3 rounded-2xl border border-blue-100 bg-blue-50/80 p-4 text-sm text-blue-900 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40 dark:text-blue-100 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 font-medium">
-                <ShieldCheck className="h-4 w-4 text-blue-500" />
-                Fast server-side download, no pop up windows.
-              </div>
-              <span className="text-xs sm:text-sm">
-                Paste the reel link, wait a moment, then save the MP4 directly from this page.
-              </span>
-            </div>
 
             {httpError && (
               <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-sm dark:border-red-500/40 dark:bg-red-950/30 dark:text-red-200">
@@ -357,30 +348,30 @@ export function InstagramVideoForm() {
                   )}
                 </div>
 
-                <dl className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-3 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
+                <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
                       Resolution
                     </dt>
-                    <dd className="mt-1 text-base font-semibold text-blue-900 dark:text-blue-100">
+                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
                       {videoInfo.width && videoInfo.height
                         ? `${videoInfo.width} x ${videoInfo.height}`
                         : "HD"}
                     </dd>
                   </div>
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-3 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
+                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
                       Duration
                     </dt>
-                    <dd className="mt-1 text-base font-semibold text-blue-900 dark:text-blue-100">
+                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
                       {formatDuration(videoInfo.durationSeconds)}
                     </dd>
                   </div>
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-3 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
+                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
                       Views
                     </dt>
-                    <dd className="mt-1 text-base font-semibold text-blue-900 dark:text-blue-100">
+                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
                       {videoInfo.viewCount ? numberFormatter.format(videoInfo.viewCount) : "--"}
                     </dd>
                   </div>
