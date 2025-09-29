@@ -338,44 +338,8 @@ export function InstagramVideoForm() {
                   </div>
                   <h3 className="text-2xl font-semibold text-foreground">
                     {videoInfo.title || "Instagram reel"}
-                  </h3>
-                  {videoInfo.caption && (
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {videoInfo.caption.length > 260
-                        ? `${videoInfo.caption.slice(0, 260)}...`
-                        : videoInfo.caption}
-                    </p>
-                  )}
+                  </h3>                 
                 </div>
-
-                <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
-                      Resolution
-                    </dt>
-                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
-                      {videoInfo.width && videoInfo.height
-                        ? `${videoInfo.width} x ${videoInfo.height}`
-                        : "HD"}
-                    </dd>
-                  </div>
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
-                      Duration
-                    </dt>
-                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
-                      {formatDuration(videoInfo.durationSeconds)}
-                    </dd>
-                  </div>
-                  <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 shadow-inner dark:border-blue-900/40 dark:bg-blue-950/40">
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-blue-500 dark:text-blue-200">
-                      Views
-                    </dt>
-                    <dd className="mt-2 text-lg font-semibold text-blue-900 dark:text-blue-100">
-                      {videoInfo.viewCount ? numberFormatter.format(videoInfo.viewCount) : "--"}
-                    </dd>
-                  </div>
-                </dl>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-xs text-muted-foreground sm:text-sm">
