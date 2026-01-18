@@ -1,5 +1,0 @@
-{
-  "/profile-viewer/page": "app/profile-viewer/page.js",
-  "/api/profile/route": "app/api/profile/route.js",
-  "/api/image/proxy/route": "app/api/image/proxy/route.js"
-}
