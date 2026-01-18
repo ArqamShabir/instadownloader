@@ -1,12 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Download, Loader2, PlayCircle, ShieldCheck, UserRound } from "lucide-react";
+import {
+  Copy,
+  Download,
+  ImageDown,
+  Loader2,
+  PlayCircle,
+  UserRound,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { getHttpErrorMessage } from "@/lib/http";
-import { downloadFile } from "@/lib/utils";
+import { downloadFile, getTimedFilename } from "@/lib/utils";
 
 import { useVideoInfo } from "@/services/api/queries";
 import { VideoInfo } from "@/types";
@@ -50,6 +58,7 @@ export function InstagramVideoForm() {
   const [isGeneratingSnapshot, setIsGeneratingSnapshot] = useState(false);
   const [snapshotError, setSnapshotError] = useState<string | null>(null);
   const [thumbnailError, setThumbnailError] = useState(false);
+  const [captionCopied, setCaptionCopied] = useState(false);
   const previewRef = useRef<HTMLDivElement | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -91,6 +100,10 @@ export function InstagramVideoForm() {
   useEffect(() => {
     setThumbnailError(false);
   }, [proxiedThumbnail]);
+
+  useEffect(() => {
+    setCaptionCopied(false);
+  }, [videoInfo]);
 
   useEffect(() => {
     setSnapshotUrl(null);
@@ -193,12 +206,30 @@ export function InstagramVideoForm() {
     }
   }
 
+  const previewThumbnail = thumbnailError ? snapshotUrl : proxiedThumbnail || snapshotUrl;
+  const captionText = videoInfo?.caption?.trim();
+
   function handleImmediateDownload() {
     if (!videoInfo || !downloadHref) return;
     downloadFile(downloadHref, { filename: videoInfo.filename, target: "_self" });
   }
 
-  const previewThumbnail = thumbnailError ? snapshotUrl : proxiedThumbnail || snapshotUrl;
+  async function handleCopyCaption() {
+    if (!captionText) return;
+    try {
+      await navigator.clipboard.writeText(captionText);
+      setCaptionCopied(true);
+      window.setTimeout(() => setCaptionCopied(false), 2000);
+    } catch (copyError) {
+      console.error(copyError);
+    }
+  }
+
+  function handleDownloadThumbnail() {
+    if (!previewThumbnail) return;
+    const filename = getTimedFilename("instagram-thumbnail", "jpg");
+    downloadFile(previewThumbnail, { filename, target: "_self" });
+  }
 
   return (
     <div className="flex w-full flex-col items-center gap-8">
@@ -292,13 +323,15 @@ export function InstagramVideoForm() {
         {!isPending && videoInfo && (
           <article className="w-full rounded-3xl border border-blue-100 bg-white/95 p-6 shadow-xl shadow-blue-200/40 backdrop-blur dark:border-blue-900/40 dark:bg-slate-950/80 dark:shadow-blue-950/30 sm:p-8">
             <div className="flex flex-col gap-6 md:flex-row">
-              <div style={{ maxHeight: '300px'}} className="flex items-center justify-center overflow-hidden rounded-2xl border border-blue-100 bg-black/80 md:w-72 dark:border-blue-900/50">
+              <div style={{ maxHeight: "300px" }} className="relative flex items-center justify-center overflow-hidden rounded-2xl border border-blue-100 bg-black/80 md:w-72 dark:border-blue-900/50">
                 {previewThumbnail ? (
-                  <img
+                  <Image
                     src={previewThumbnail}
                     alt={videoInfo.title || "Instagram reel thumbnail"}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 288px"
+                    className="object-cover"
+                    unoptimized={previewThumbnail.startsWith("data:")}
                     referrerPolicy="no-referrer"
                     onError={() => {
                       if (!thumbnailError) {
@@ -351,6 +384,29 @@ export function InstagramVideoForm() {
                     className="h-12 w-full rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 px-8 text-base font-semibold shadow-lg shadow-blue-300/50 transition hover:brightness-105 focus-visible:ring-blue-600 dark:from-blue-500 dark:to-sky-400 dark:shadow-blue-900/40 sm:w-auto"
                   >
                     <Download className="mr-2 h-5 w-5" /> Download MP4
+                  </Button>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleCopyCaption}
+                    disabled={!captionText}
+                    className="h-11 rounded-2xl border-blue-200 text-sm dark:border-blue-900/50"
+                  >
+                    <Copy className="mr-2 h-4 w-4" />
+                    {captionCopied ? "Caption copied" : "Copy caption"}
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleDownloadThumbnail}
+                    disabled={!previewThumbnail}
+                    className="h-11 rounded-2xl border-blue-200 text-sm dark:border-blue-900/50"
+                  >
+                    <ImageDown className="mr-2 h-4 w-4" />
+                    Download thumbnail
                   </Button>
                 </div>
               </div>

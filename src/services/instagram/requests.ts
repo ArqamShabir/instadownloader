@@ -61,3 +61,53 @@ export async function getPostGraphqlData({
 
   return data;
 }
+
+export async function getProfilePageHTML({
+  username,
+}: {
+  username: string;
+}): Promise<string> {
+  const res = await apiClient.get(`/${username}/`, {
+    baseURL: "https://www.instagram.com",
+    headers: {
+      accept: "*/*",
+      host: "www.instagram.com",
+      referer: "https://www.instagram.com/",
+      DNT: "1",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
+    },
+  });
+
+  const data = await res.text();
+
+  return data;
+}
+
+export async function getProfileWebInfo({
+  username,
+}: {
+  username: string;
+}): Promise<any> {
+  const res = await apiClient.get(
+    `/api/v1/users/web_profile_info/?username=${encodeURIComponent(username)}`,
+    {
+      baseURL: "https://www.instagram.com",
+      headers: {
+        accept: "*/*",
+        host: "www.instagram.com",
+        referer: `https://www.instagram.com/${username}/`,
+        DNT: "1",
+        "X-IG-App-ID": "936619743392459",
+        "X-Requested-With": "XMLHttpRequest",
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
+      },
+    }
+  );
+
+  return res.json();
+}

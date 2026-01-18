@@ -28,6 +28,18 @@ export type VideoInfo = {
   source?: "graphql" | "webpage";
 };
 
+export type ProfileInfo = {
+  username: string;
+  fullName?: string;
+  bio?: string;
+  profileImageUrl?: string;
+  profileUrl?: string;
+  summary?: string;
+  followers?: number;
+  following?: number;
+  posts?: number;
+};
+
 export type SuccessResponse<T> = {
   status: "success";
   message?: string;

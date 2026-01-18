@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 
 import { AsyncReturnType } from "@/types";
 
-import { getVideoInfo } from "./requests";
+import { getProfileInfo, getVideoInfo } from "./requests";
 
 export function useVideoInfo() {
   return useMutation<
@@ -11,5 +11,15 @@ export function useVideoInfo() {
     Parameters<typeof getVideoInfo>[0]
   >({
     mutationFn: getVideoInfo,
+  });
+}
+
+export function useProfileInfo() {
+  return useMutation<
+    AsyncReturnType<typeof getProfileInfo>,
+    Error,
+    Parameters<typeof getProfileInfo>[0]
+  >({
+    mutationFn: getProfileInfo,
   });
 }

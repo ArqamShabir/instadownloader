@@ -35,6 +35,7 @@ export function Navbar() {
         {/* Desktop Nav (Hidden on Mobile) */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
           <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+          <Link href="/profile-viewer" className="hover:text-blue-600 transition-colors">Profile Viewer</Link>
           <Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
           <Link href="/contact" className="hover:text-blue-600 transition-colors">Contact</Link>
           <Link href="/terms-of-service" className="hover:text-blue-600 transition-colors">Terms</Link>

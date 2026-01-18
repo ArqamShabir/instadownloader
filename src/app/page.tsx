@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 import { InstagramVideoForm } from "@/features/instagram/components/form";
 import Faq from "@/features/instagram/components/Faq";
 import {
-  ArrowRight,
   CheckCircle,
   Download,
+  Eye,
+  FileText,
   Heart,
   Instagram,
   Play,
@@ -260,6 +262,23 @@ const steps = [
   },
 ];
 
+const extraTools = [
+  {
+    icon: Eye,
+    title: "Instagram Profile Viewer",
+    description: "Check public profile stats and profile pictures instantly.",
+    href: "/profile-viewer",
+    cta: "View profiles",
+  },
+  {
+    icon: FileText,
+    title: "Reels Download Guide",
+    description: "Follow a step-by-step tutorial to save reels in HD.",
+    href: "/blog",
+    cta: "Read the guide",
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
@@ -288,15 +307,15 @@ export default function HomePage() {
             {/* Professional Badge */}
             <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white shadow-md text-xs">
               <CheckCircle className="h-5 w-5" />
-              <span className="font-semibold">100% Free • No Registration • HD Quality</span>
+              <span className="font-semibold">100% Free - No Registration - HD Quality</span>
             </div>
             
             {/* Main Heading */}
-            <h1 className="mb-6 px-4  text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            <h1 className="mb-6 px-4 text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
               Download Instagram Videos
               <span className="block text-blue-600 dark:text-blue-400">
                 Without Watermark
-            </span>
+              </span>
             </h1>
             
             {/* Professional Subtitle */}
@@ -408,6 +427,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* More Tools Section */}
+      <section className="py-10 bg-white dark:bg-gray-900 px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              More Instagram Tools
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Explore more features to get the most out of Instagram content.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {extraTools.map((tool, index) => (
+              <Link
+                key={index}
+                href={tool.href}
+                className="group rounded-3xl border border-blue-100 bg-white/90 p-8 shadow-lg shadow-blue-200/20 transition hover:-translate-y-1 hover:shadow-blue-300/30 dark:border-blue-900/40 dark:bg-slate-950/70 dark:shadow-blue-950/30"
+              >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-200">
+                  <tool.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {tool.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  {tool.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-300">
+                  {tool.cta}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-10 px-6">
         <div className="mx-auto max-w-4xl">
@@ -469,7 +524,7 @@ export default function HomePage() {
             </p>
             <div className="border-t border-gray-800 pt-8">
               <p className="text-gray-500">
-                © 2025 InstaDownloader.cloud - We are not affiliated with Instagram or Meta.
+                Copyright 2025 InstaDownloader.cloud - We are not affiliated with Instagram or Meta.
               </p>
             </div>
           </div>

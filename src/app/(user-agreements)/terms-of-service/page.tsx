@@ -16,7 +16,7 @@ const TermsOfServicePage = () => {
         </h1>
 
         <p className="text-gray-700 dark:text-gray-300 mb-6">
-          These Terms of Service ("Terms") govern your use of the website https://instadownloader.cloud ("Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use our Site.
+          These Terms of Service (&quot;Terms&quot;) govern your use of the website https://instadownloader.cloud (&quot;Site&quot;). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use our Site.
         </p>
 
         <h2 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">1. Use of the Site</h2>

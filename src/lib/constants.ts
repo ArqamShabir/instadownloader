@@ -9,6 +9,10 @@ export const siteLinks: NavLink[] = [
     href: "/",
   },
   {
+    name: "Profile Viewer",
+    href: "/profile-viewer",
+  },
+  {
     name: "Terms of Service",
     href: "/terms-of-service",
   },

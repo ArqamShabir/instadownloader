@@ -56,7 +56,7 @@ const PrivacyPolicyPage = () => {
           We may use third-party services such as Google Analytics or advertising partners. These services may use cookies and similar technologies in line with their own privacy policies.
         </p>
 
-        <h2 className="mb-3 text-xl font-semibold text-gray-800 dark:text-white">Children's Privacy</h2>
+        <h2 className="mb-3 text-xl font-semibold text-gray-800 dark:text-white">Children&apos;s Privacy</h2>
         <p className="mb-6 text-gray-700 dark:text-gray-300">
           InstaDownloader.cloud does not knowingly collect personally identifiable information from children under 13. If you believe your child has provided such information, please contact us immediately.
         </p>
